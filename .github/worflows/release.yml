@@ -7,7 +7,8 @@ on:
 
 jobs:
   publish-tauri:
-    environment: Release
+    env:
+      TAURI_KEY_PASSWORD: ${{ vars.TAURI_KEY_PASSWORD }}
     permissions:
       contents: write
     strategy:
