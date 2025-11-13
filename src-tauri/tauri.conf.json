@@ -1,0 +1,52 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "giffos",
+  "version": "0.1.2",
+  "identifier": "com.digitalartifactory.giffos",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "Giffos - The awsm gifs widget",
+        "width": 300,
+        "height": 390,
+        "maxWidth": 300,
+        "maxHeight": 390,
+        "transparent": true,
+        "decorations": false,
+        "alwaysOnTop": true,
+        "resizable": false,
+        "fullscreen": false
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "msi",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "createUpdaterArtifacts": true
+  },
+  "plugins": {
+    "updater": {
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDBBM0JDOTE1ODFEMjM1RDgKUldUWU5kS0JGY2s3Q3ZqbmtWRHRyNGNScmVqUnNMRGl6L3U1RGFiQWNHMlVneXRHd0xnSWhaN3MK",
+      "updateUrl": "https://github.com/digitalartifactory/giffos/releases/download/latest.json",
+      "windows": {
+        "installMode": "passive"
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body,
+html {
+    color-scheme: light dark;
+    background-color: rgba(0, 0, 0, 0.7);
+    transition: background-color 0.3s ease;
+}
+
+.draggable {
+    -webkit-app-region: drag;
+}
+
+img {
+    -webkit-app-region: no-drag;
+    cursor: pointer;
+}
+
+.carousel {
+    -webkit-app-region: no-drag;
+}
