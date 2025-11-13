@@ -4,11 +4,12 @@ on:
   push:
     branches:
       - release
+      
+env:
+  TAURI_KEY_PASSWORD: ${{ vars.TAURI_KEY_PASSWORD }}
 
 jobs:
   publish-tauri:
-    env:
-      TAURI_KEY_PASSWORD: ${{ vars.TAURI_KEY_PASSWORD }}
     permissions:
       contents: write
     strategy:
