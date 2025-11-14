@@ -43,7 +43,9 @@
   "plugins": {
     "updater": {
       "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDBBM0JDOTE1ODFEMjM1RDgKUldUWU5kS0JGY2s3Q3ZqbmtWRHRyNGNScmVqUnNMRGl6L3U1RGFiQWNHMlVneXRHd0xnSWhaN3MK",
-      "updateUrl": "https://github.com/digitalartifactory/giffos/releases/latest",
+      "endpoints": [
+        "https://github.com/digitalartifactory/giffos/releases/latest/download/latest.json"
+      ],
       "windows": {
         "installMode": "passive"
       }
