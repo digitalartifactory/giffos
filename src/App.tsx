@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import "./App.css";
 import { invoke } from "@tauri-apps/api/core";
 import { appCacheDir } from "@tauri-apps/api/path";
@@ -6,6 +6,8 @@ import { writeFile } from "@tauri-apps/plugin-fs";
 import { load } from "@tauri-apps/plugin-store";
 
 function App() {
+  const searchRef = useRef<HTMLInputElement>(null);
+
   const [index, setIndex] = useState(-1);
   const [searchQuery, setSearchQuery] = useState("");
   const [gifs, setGifs] = useState<string[]>([]);
@@ -68,6 +70,7 @@ function App() {
   }, [apiKey]);
 
   useEffect(() => {
+    searchRef.current?.focus();
     const loadApiKey = async () => {
       const store = await load("config.json");
       const value = await store.get<string>("apiKey");
@@ -180,6 +183,7 @@ function App() {
               )}
             </div>
             <input
+              ref={searchRef}
               id="search"
               value={searchQuery}
               className="w-full p-1 rounded bg-gray-800"
